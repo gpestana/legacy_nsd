@@ -15,7 +15,16 @@ test('database tests', function(t) {
 
 	function proceed() {
 
-		
+		var obj = JSON.parse(doc);
+		console.log(_.keys(obj));
+
+		var i =0;
+		for(var key in obj) {
+			console.log("-------- #"+key);
+			console.log(obj[key]);
+			i++;
+		}
+		console.log('---->'+i);
 
 	}
 
