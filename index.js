@@ -4,7 +4,7 @@ var search = require('./lib/search.js');
 
 var input = process.argv.slice(2);
 
-if (input == '-dev') {
+if (input == '-fetch') {
 	fetchData.fetchDocsNode(function(data) {
 		db.setNodeDocsJSON(data);
 		console.log("-- Official docs fetched successfuly");
@@ -13,24 +13,34 @@ if (input == '-dev') {
 			db.setUsersContent(data)
 			console.log("-- Users content fetched successfuly");
 
-			proceed();
+			init_server();
 
 		});
 	});
 } else {
-	proceed();
+	init_server();
 }
 
 
-function proceed() {
-	//triggers
+function init_server() {
+	//-triggers
 	//start github triggers (webhooks)
 
-	//webpage
-	//server webpage!
+	//-webpage
+	//generate html
+	//serve webpage!
 
 
-	//search
-	search.test();
+	//search (api)
+	var options = {
+		query: "process node",
+		both: false
+	}
+
+	search.query(options, function(i, measure) {
+		console.log('#'+i+" measure:"+measure);
+	});
+
+
 }
 
