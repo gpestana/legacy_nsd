@@ -15,20 +15,37 @@ test('database tests', function(t) {
 
 	function proceed() {
 
+		var blobs = [];
 		var obj = JSON.parse(doc);
-		console.log(_.keys(obj));
 
-		var i =0;
-		for(var key in obj) {
-			console.log("-------- #"+key);
-			console.log(obj[key]);
-			i++;
+
+		var docsJSON = _.omit(obj, 
+			'source', 'miscs','stability','stabilityText');
+
+		for(var entry in docsJSON) {
+			console.log(entry);
+			for(var blob in entry) {
+				console.log(blob.length);
+			}
 		}
-		console.log('---->'+i);
+
+		console.log(blobs.length);
+
+
 
 	}
 
-
-
 	t.end();
 });
+
+
+/*
+[ -'source',
+  -'miscs',
+  'globals',
+  'vars',
+  'methods',
+  'modules',
+  -'stability',
+  -'stabilityText' ]
+*/

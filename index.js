@@ -1,6 +1,7 @@
 var fetchData = require('./lib/fetchData.js')
 var db = require('./lib/db.js');
 var search = require('./lib/search.js');
+var server = require('./lib/server.js')
 
 var input = process.argv.slice(2);
 
@@ -37,9 +38,13 @@ function init_server() {
 		both: false
 	}
 
+	/*
 	search.query(options, function(i, measure) {
 		console.log('#'+i+" measure:"+measure);
 	});
+	*/
+
+	server.initServer();
 
 
 }

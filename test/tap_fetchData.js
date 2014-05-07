@@ -11,7 +11,7 @@ test('fetch node docs json', function(t) {
 		fetch.fetchDocsNode(function(data) {
 			return data;
 		})
-	}, null, '| node content not null');
+	}, null, '| fetchDocsNode content not null');
 
 	t.end();
 });
