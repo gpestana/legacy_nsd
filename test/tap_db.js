@@ -20,18 +20,22 @@ test('database tests', function(t) {
 
 
 		var docsJSON = _.omit(obj, 
-			'source', 'miscs','stability','stabilityText');
-
-		for(var entry in docsJSON) {
-			console.log(entry);
-			for(var blob in entry) {
-				console.log(blob.length);
-			}
-		}
-
-		console.log(blobs.length);
+			'source','stability','stabilityText');
 
 
+		var arr = [];
+		_.keys(docsJSON).forEach(function(i) {
+			
+			_.values(docsJSON[i]).forEach(function(j) {
+				arr.push(j);
+			});
+		});
+
+
+
+		arr.forEach(function(entry) {
+			console.log(entry.name);
+		});
 
 	}
 

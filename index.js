@@ -23,29 +23,12 @@ if (input == '-fetch') {
 }
 
 
+
+
 function init_server() {
-	//-triggers
-	//start github triggers (webhooks)
 
-	//-webpage
-	//generate html
-	//serve webpage!
-
-
-	//search (api)
-	var options = {
-		query: "process node",
-		both: false
-	}
-
-	/*
-	search.query(options, function(i, measure) {
-		console.log('#'+i+" measure:"+measure);
+	fetchData.fetchIndex(function(data) {
+		console.log(data);
 	});
-	*/
-
-	server.initServer();
-
-
 }
 
