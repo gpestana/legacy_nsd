@@ -14,22 +14,7 @@ if (input == '-populate') {
 }
 
 
-
-
 function init_server() {
-
-	//console.log("procceed...");
-	//server.initServer();
-
-	var request = require('request');
-
-	request('http://nodejs.org/api/http.json', function(err, resp, body) {
-		if(err) {
-			throw new Error('Error: fetch JSON index '+err);
-		}
-
-		console.log(typeof JSON.parse(body));
-	});
-
+	console.log("init_server");
 }
 
