@@ -7,8 +7,11 @@ var input = process.argv.slice(2);
 
 if (input == '-populate') {
 	populateDB.init(function() {
-		init_server();
-	});
+		
+
+		//here, stick with name and URL for the results!
+		search.query('fs', 10)
+	})
 } else {
 	init_server();
 }
