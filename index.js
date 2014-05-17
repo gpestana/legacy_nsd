@@ -7,10 +7,9 @@ var input = process.argv.slice(2);
 
 if (input == '-populate') {
 	populateDB.init(function() {
-		
-
-		//here, stick with name and URL for the results!
-		search.query('fs', 10)
+		search.query('stream error event', 10, function(res) {
+			console.log(res)
+		})
 	})
 } else {
 	init_server();
