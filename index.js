@@ -7,7 +7,10 @@ var input = process.argv.slice(2);
 
 if (input == '-populate') {
 	populateDB.init(function() {
-		search.query('stream error event', 10, function(res) {
+		
+		query = 'http emit events'
+
+		search.query(query, 10, function(res) {
 			console.log(res)
 		})
 	})
